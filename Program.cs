@@ -46,7 +46,7 @@ namespace PokerTest
         {'H', Suit.Hearts},
         {'S', Suit.Spades},
         {'D', Suit.Diamonds},
-        {'C', Suit.Diamonds}
+        {'C', Suit.Clubs}
     };
         public string GetHandName(string input)
         {
@@ -61,7 +61,8 @@ namespace PokerTest
             for (int count = 0; count < tokens.Count(); count++)
             {
                 SuitRank = tokens.ElementAt(count).ToCharArray();
-                tempList.Add(new Card<Suit, Rank>((Suit)ConvertSuit(SuitRank[1]).Value, (Rank)ConvertRank(SuitRank[0]).Value));
+                tempList.Add(new Card<Suit, Rank>((Suit)ConvertSuit(SuitRank[1]).Value, 
+                                                  (Rank)ConvertRank(SuitRank[0]).Value));
             }
 
             // Pair
